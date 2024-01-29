@@ -1,0 +1,24 @@
+#wrapper {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+.sp {
+    margin-bottom: 15px;
+}
+
+input, select, textarea {
+    margin-left: 10px;
+    resize: none;
+}
+
+.submit{
+    margin-top: 10px;
+}
+a {
+    text-decoration: none;
+    color: #2bbbf9;
+}
+.fa-angle-left {
+    color: #2bbbf9;
+}

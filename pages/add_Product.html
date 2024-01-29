@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tama Chan Admin</title>
+    <link rel="icon" type="image/png" href="../asset/Butterfly (1).png">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/fontawesome-free-6.5.1-web/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/add-Product.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link">
+                    <i class="fas fa-bars" onclick="collapeSidebar ()"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <img src="../asset/Butterfly (1).png" alt="logo ảnh Tama Chan" class="logo">
+            </li>
+        </ul>
+        <form class="navbar-search">
+            <input type="text" name="search" class="navbar-search-input" placeholder="Tìm kiếm...">
+            <i class="fas fa-search"></i>
+        </form>
+        <ul class="navbar-nav nav-right">
+            <li class="nav-item dropdown ">
+                <a class="nav-link">
+                    <i class="fas fa-bell dropdown-toggle" data-toggle="notification-menu"></i>
+                    <span class="navbar-badge">15</span>
+                </a>
+                <ul id="notification-menu" class="dropdown-menu notification-menu">
+                    <div class="dropdown-menu-header">
+                        <span>
+                            Thông báo
+                        </span>
+                        <div class="dropdown-menu-content">
+                            <li class="dropdown-menu-item">
+                                <a href="#" class="dropdown-menu-link">
+                                    <div>
+                                        <i class="fas fa-gift"></i>
+                                    </div>
+                                    <span>Lorem ipsum, dolor sitit in officia dicta distinctios cumque voluptremque!<br>
+                                        <span>26/01/2024</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="dropdown-menu-item">
+                                <a href="#" class="dropdown-menu-link">
+                                    <div>
+                                        <i class="fas fa-gift"></i>
+                                    </div>
+                                    <span>Lorem ipsum, dolor sitit in officia dicta distinctios cumque voluptremque!<br>
+                                        <span>26/01/2024</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="dropdown-menu-item">
+                                <a href="#" class="dropdown-menu-link">
+                                    <div>
+                                        <i class="fas fa-gift"></i>
+                                    </div>
+                                    <span>Lorem ipsum, dolor sitit in officia dicta distinctios cumque voluptremque!<br>
+                                        <span>26/01/2024</span>
+                                    </span>
+                                </a>
+                            </li>
+                            <div class="dropdown-menu-footer">
+                                <span>
+                                    Tất cả thông báo
+                                </span>
+                            </div>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <div class="avt dropdown">
+                    <img src="../asset/c.jpeg" alt="User image" class="dropdown-toggle" data-toggle="user-menu">
+                    <ul id="user-menu" class="dropdown-menu">
+                        <li class="dropdown-menu-item">
+                            <a href="#nowhere" class="dropdown-menu-link">
+                                <div>
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <span>Hồ sơ</span>
+                            </a>
+                        </li>
+                        <li class="dropdown-menu-item">
+                            <a href="#nowhere" class="dropdown-menu-link">
+                                <div>
+                                    <i class="fas fa-cog"></i>
+                                </div>
+                                <span>Cài đặt</span>
+                            </a>
+                        </li>
+                        <li class="dropdown-menu-item">
+                            <a href="#nowhere" class="dropdown-menu-link">
+                                <div>
+                                    <i class="fas fa-sign-out-alt"></i>
+                                </div>
+                                <span>Đăng xuất</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- end navbar -->
+    <!-- sidebar -->
+    <div class="sidebar" onmouseover="collapeSidebar ()">
+        <ul class="sidebar-nav">
+            <li class="sidebar-nav-item">
+                <a href="./admin.html" class="sidebar-nav-link">
+                    <div>
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <span>Quản lý Users</span>
+                </a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a href="./category.html" class="sidebar-nav-link">
+                    <div>
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <span>Quản lý danh mục</span>
+                </a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a href="./product.html" class="sidebar-nav-link">
+                    <div>
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <span>Quản lý sản phẩm</span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+    <!-- end sidebar -->
+    <!-- main content -->
+    <div class="wrapper" >
+        <div id="wrapper">
+            <div>
+                <i class="fas fa-angle-left"></i>
+                <a href="./product.html">Back</a>
+            </div>
+            <form id="productForm">
+                <div id="time"></div>
+                <h2>Add Product (Thêm sản phẩm)</h2>
+                <div class="sp">
+                    <label for="productName">Tên sản phẩm</label><br>
+                    <input name="productName" type="text" class="input" id="productName" required>  <span class="error" id="loi1"></span>
+                    <br>
+                </div>
+                <div class="sp">
+                    <label for="price">Giá</label><br>
+                    <input name="price" type="text" class="input" id="price"> <span class="error" id="loi7"></span>
+                    <br>
+                </div>
+                <div class="sp">
+                    <label for="productCode">Mã sản phẩm</label><br>
+                    <input name="productCode" type="text" class="input" id="productCode"> <span class="error" id="loi2"></span>
+                    <br>
+                </div>
+                <div class="sp">
+                    <label for="status">Trạng thái </label>
+                    <select name="status" id="status"  class="sp">
+                        <option value="có sẵn">Có sẵn</option>
+                        <option value="Đang xem xét">Đang xem xét</option>
+                        <option value="Đặt trước">Đặt trước</option>
+                        <option value="Hết hàng">Hết hàng</option>
+                    </select>
+                    <br>
+                </div>
+                <div class="sp">
+                    <label for="category">Danh mục </label>
+                    <select name="category" id="category" >
+                        <!-- <option value="Áo">Áo</option>
+                        <option value="Quần">Quần</option>
+                        <option value="Váy">Váy</option>
+                        <option value="Giầy">Giầy</option> -->
+                    </select>
+                <br>
+                </div>
+               <div class="sp">
+                    <label for="imageUpload">Ảnh</label><br>
+                    <input type="file" id="imageUpload" name="imageUpload" accept="image/*">
+                    <br> <br>
+               </div>
+                <div class="sp">
+                    <label for="description">Miêu tả sảm phẩm</label><br>
+                    <textarea id="description" name="description" cols="50" rows="5"></textarea>
+                    <br><br>
+                </div>
+                <button type="submit">Add Product</button>
+    
+            </div>
+            </form>
+    </div>
+    <!-- end main content -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src="../js/add_Product.js"></script>
+    <script src="../js/common.js"></script>
+</body>
+
+</html>
